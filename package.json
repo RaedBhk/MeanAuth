@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "gulp test",
-    "test-w": "./node_modules/.bin/mocha --reporter spec",
-    "start": "gulp server"
+    "test-w": "mocha --reporter spec",
+    "start": "gulp server",
+    "cover": "./node_modules/.bin/istanbul test ./node_modules/mocha/bin/_mocha -- --recursive -R spec"
   },
   "author": "AxiomZen",
   "homepage": "https://github.com/axiomzen/blueprints-ch2",
@@ -24,6 +25,7 @@
     "gulp-express": "^0.3.5",
     "gulp-mocha": "^4.0.1",
     "gulp-util": "^3.0.8",
+    "istanbul": "^0.4.5",
     "mocha": "^1.21.3",
     "should": "^4.0.4",
     "supertest": "^0.13.0"
