@@ -6,7 +6,7 @@ var app     = require('../src/lib/app');
 var Actor   = require('../src/models/actor');
 
 
-describe('Actors', function() {
+describe('Actors ', function() {
 
   // cleanup the collection once to have consistent test results
   before(function(done) {
@@ -16,7 +16,7 @@ describe('Actors', function() {
   });
 
 
-  describe('POST actor', function(){
+  describe('POST ACTOR', function(){
     it('should create a actor', function(done){
       var actor = {
         'id': '1',

@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec",
-    "start": "node app.js"
+    "test": "gulp test",
+    "test-w": "./node_modules/.bin/mocha --reporter spec",
+    "start": "gulp server"
   },
   "author": "AxiomZen",
   "homepage": "https://github.com/axiomzen/blueprints-ch2",
@@ -19,6 +20,10 @@
     "mongoose": "^4.0.1"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-express": "^0.3.5",
+    "gulp-mocha": "^4.0.1",
+    "gulp-util": "^3.0.8",
     "mocha": "^1.21.3",
     "should": "^4.0.4",
     "supertest": "^0.13.0"
