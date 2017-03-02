@@ -31,8 +31,7 @@ gulp.task('testing', ['pre-test'], cb => {
   let mochaErr;
 
   gulp.src('test/*.js')
-    .pipe(plumber())
-    .pipe(mocha({reporter: 'spec', timeout: 3000}))
+    .pipe(mocha({reporter: 'spec'}))
     .on('error', err => {
       mochaErr = err;
     })
