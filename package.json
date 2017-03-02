@@ -11,7 +11,8 @@
     "testing": "gulp testing",
     "test-w": "mocha --reporter spec",
     "start": "gulp server",
-    "cover": "./node_modules/.bin/istanbul test ./node_modules/mocha/bin/_mocha -- --recursive -R spec"
+    "cover": "./node_modules/.bin/istanbul test ./node_modules/mocha/bin/_mocha -- --recursive -R spec",
+    "lint": "./node_modules/.bin/jshint test src"
   },
   "author": "AxiomZen",
   "homepage": "https://github.com/axiomzen/blueprints-ch2",

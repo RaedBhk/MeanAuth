@@ -19,16 +19,26 @@ gulp.task('test' , function () {
 });
 
 
-gulp.task('testing', function (cb) {
-  gulp.src(['src/**/*.js'])
-    .pipe(istanbul())
-    .pipe(istanbul.hookRequire()) 
-    .on('finish', function () {
-      gulp.src(['test/**/*.js'])
-        .pipe(mocha({ reporter: 'spec' }))
-	.pipe(istanbul.writeReports())
-	.pipe(istanbul.enforceThresholds({ thresholds: { global: 10 } }))
-	.on('end', cb);
+gulp.task('pre-test', () =>
+  gulp.src([
+    'src/**/*.js'
+  ])
+    .pipe(istanbul({includeUntested: true}))
+    .pipe(istanbul.hookRequire())
+);
+
+gulp.task('testing', ['pre-test'], cb => {
+  let mochaErr;
+
+  gulp.src('test/*.js')
+    .pipe(plumber())
+    .pipe(mocha({reporter: 'spec', timeout: 3000}))
+    .on('error', err => {
+      mochaErr = err;
+    })
+    .pipe(istanbul.writeReports())
+    .on('end', () => {
+      cb(mochaErr);
     });
 });
 
