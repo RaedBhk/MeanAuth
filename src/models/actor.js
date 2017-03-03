@@ -23,6 +23,6 @@ var actorSchema = new mongoose.Schema({
   }]
 });
 
-//actorSchema.plugin(generateId());
+actorSchema.plugin(generateId());
 
 module.exports = mongoose.model('Actor', actorSchema);

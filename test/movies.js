@@ -8,7 +8,7 @@ var Movie   = require('../src/models/movie');
 
 describe('Movies', function() {
 
-  // cleanup the collection once to have consistent test results
+ // cleanup the collection once to have consistent test results
   before(function(done) {
     Movie.remove({}, function(err,result) {
       done(err);
